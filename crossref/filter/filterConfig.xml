@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filterConfig SYSTEM "../../../../lib/pkp/dtd/filterConfig.dtd">
+
+<!--
+  * plugins/importexport/crossref/filter/filterConfig.xml
+  *
+  * Copyright (c) 2014-2021 Simon Fraser University
+  * Copyright (c) 2003-2021 John Willinsky
+  * Distributed under The MIT License. For full terms see the file LICENSE.
+  *
+  * Filter Configuration.
+  -->
+<filterConfig>
+	<filterGroups>
+		<!-- Crossref XML book output -->
+		<filterGroup
+			symbolic="book=>crossref-xml"
+			displayName="plugins.importexport.crossref.displayName"
+			description="plugins.importexport.crossref.description"
+			inputType="class::classes.submission.Submission[]"
+			outputType="xml::schema(https://www.crossref.org/schemas/crossref4.3.7.xsd)" />
+	</filterGroups>
+	<filters>
+		<!-- Crossref XML book output -->
+		<filter
+			inGroup="book=>crossref-xml"
+			class="APP\plugins\generic\crossref\filter\CrossrefXmlFilter"
+			isTemplate="0" />
+	</filters>
+</filterConfig>
